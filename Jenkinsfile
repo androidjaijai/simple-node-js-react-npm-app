@@ -17,11 +17,6 @@ pipeline {
         }
     }
     stages {
-        stage('Fail') {
-            steps {
-                fffffffffffffffffffffffffffffffffffffffffffffffffffff
-            }
-        }
         stage('Build') {
             steps {
                 sh 'npm install'
