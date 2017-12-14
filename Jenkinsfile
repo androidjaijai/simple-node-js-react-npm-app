@@ -30,6 +30,13 @@ pipeline {
         failure {
           mail to: "lm193hk.hkust@gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Boo, we failed."
         }
+
+        always {
+            step([$class: 'Mailer',
+                notifyEveryUnstableBuild: true,
+                recipients: "lm193hk.hkust@gmail.com",
+                sendToIndividuals: true])
+        }
     }
     stages {
         stage('Notify') {
