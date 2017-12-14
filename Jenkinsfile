@@ -38,7 +38,7 @@ pipeline {
     stages {
         stage('Notify') {
             steps{
-                emailext body: 'testing....................', subject: 'Something changed in the repo', to: 'lm193hk.hkust@gmail.com'
+                mail to: "lm193hk.hkust@gmail.com", subject:"BEGIN: ${currentBuild.fullDisplayName}", body: "test just began"
             }
         }
         stage('Build') {
