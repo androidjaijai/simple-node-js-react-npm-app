@@ -33,6 +33,11 @@ pipeline {
 
         always {
             mail to: "lm193hk.hkust@gmail.com", subject:"FINISHED: ${currentBuild.fullDisplayName}", body: "something changed. take a look man"
+            script {
+                emailext subject: 'EMAILEXT: ${currentBuild.fullDisplayName}',
+                        body: 'GOOD!',
+                        to: 'lm193hk.hkust@gmail.com'
+            }
         }
     }
     stages {
