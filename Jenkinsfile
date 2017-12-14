@@ -43,7 +43,7 @@ pipeline {
         }
         stage('Fail') {
             steps {
-                asklfjlakjflksajdflkajd
+                sh './jenkins/scripts/fail.sh'
             }
         }
         stage('Build') {

@@ -1,0 +1,2 @@
+echo 'now fail'
+asldkfjalskjflaskjflkajflasjflsa
