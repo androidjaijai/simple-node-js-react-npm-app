@@ -9,6 +9,9 @@ pipeline {
         CI = 'true'
     }
     post {
+        changed {
+          mail to: "lm193hk.hkust@gmail.com", subject:"CHANGED: ${currentBuild.fullDisplayName}", body: "something changed. take a look man"
+        }
         success {
           mail to: "lm193hk.hkust@gmail.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay, we passed."
         }
