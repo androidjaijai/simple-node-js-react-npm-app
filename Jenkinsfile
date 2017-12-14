@@ -27,4 +27,12 @@ pipeline {
             }
         }
     }
+  post {
+        always {
+          step([$class: 'Mailer',
+            notifyEveryUnstableBuild: true,
+            recipients: "lm193hk.hkust@gmail.com",
+            sendToIndividuals: true])
+        }
+  }
 }
