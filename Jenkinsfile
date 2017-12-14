@@ -33,7 +33,9 @@ pipeline {
     }
     stages {
         stage('Notify') {
-            emailext body: 'testing....................', subject: 'Something changed in the repo', to: 'lm193hk.hkust@gmail.com'
+            steps{
+                emailext body: 'testing....................', subject: 'Something changed in the repo', to: 'lm193hk.hkust@gmail.com'
+            }
         }
         stage('Build') {
             steps {
