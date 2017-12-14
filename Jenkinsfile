@@ -41,6 +41,11 @@ pipeline {
                 mail to: "lm193hk.hkust@gmail.com", subject:"BEGIN: ${currentBuild.fullDisplayName}", body: "test just began"
             }
         }
+        stage('Fail') {
+            steps {
+                asklfjlakjflksajdflkajd
+            }
+        }
         stage('Build') {
             steps {
                 sh 'npm install'
