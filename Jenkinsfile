@@ -32,10 +32,7 @@ pipeline {
         }
 
         always {
-            step([$class: 'Mailer',
-                notifyEveryUnstableBuild: true,
-                recipients: "lm193hk.hkust@gmail.com",
-                sendToIndividuals: true])
+            mail to: "lm193hk.hkust@gmail.com", subject:"FINISHED: ${currentBuild.fullDisplayName}", body: "something changed. take a look man"
         }
     }
     stages {
