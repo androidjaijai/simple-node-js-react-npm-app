@@ -1,5 +1,5 @@
 def notifyStarted() {
-  // mail to: "lm193hk.hkust@gmail.com", subject:"notifyStarted(): ${currentBuild.fullDisplayName}", body: "see it works!"
+  mail to: "lm193hk.hkust@gmail.com", subject:"notifyStarted(): ${currentBuild.fullDisplayName}", body: "see it works!"
 }
 
 notifyStarted()
@@ -15,25 +15,24 @@ pipeline {
         CI = 'true'
     }
     post {
-        changed {
-          // mail to: "lm193hk.hkust@gmail.com", subject:"CHANGED: ${currentBuild.fullDisplayName}", body: "something changed. take a look man"
-        }
-        success {
-          // mail to: "lm193hk.hkust@gmail.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay, we passed."
-        }
-        failure {
-          // mail to: "lm193hk.hkust@gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Boo, we failed."
-        }
-
+        // changed {
+        //   mail to: "lm193hk.hkust@gmail.com", subject:"CHANGED: ${currentBuild.fullDisplayName}", body: "something changed. take a look man"
+        // }
+        // success {
+        //   mail to: "lm193hk.hkust@gmail.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay, we passed."
+        // }
+        // failure {
+        //   mail to: "lm193hk.hkust@gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Boo, we failed."
+        // }
         always {
-            // mail to: "lm193hk.hkust@gmail.com", subject:"ALWAYS: ${currentBuild.fullDisplayName}", body: "something changed. take a look man"
+            mail to: "lm193hk.hkust@gmail.com", subject:"ALWAYS: ${currentBuild.fullDisplayName}", body: "something changed. take a look man"
         }
     }
     stages {
         /*
         stage('Notify') {
             steps{
-                // mail to: "lm193hk.hkust@gmail.com", subject:"BEGIN: ${currentBuild.fullDisplayName}", body: "test just began"
+                mail to: "lm193hk.hkust@gmail.com", subject:"BEGIN: ${currentBuild.fullDisplayName}", body: "test just began"
             }
         }
         */
