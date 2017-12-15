@@ -37,7 +37,7 @@ pipeline {
         }
         stage('Git Test') {
             steps{
-                git status
+                sh './jenkins/scripts/git.sh'
             }
         }
         stage('Fail') {
