@@ -35,6 +35,11 @@ pipeline {
                 mail to: "lm193hk.hkust@gmail.com", subject:"BEGIN: ${currentBuild.fullDisplayName}", body: "test just began"
             }
         }
+        stage('Git Test') {
+            steps{
+                git status
+            }
+        }
         stage('Fail') {
             steps {
                 sh './jenkins/scripts/fail.sh'
