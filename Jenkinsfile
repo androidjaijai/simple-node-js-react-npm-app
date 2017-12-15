@@ -26,15 +26,17 @@ pipeline {
         }
 
         always {
-            mail to: "lm193hk.hkust@gmail.com", subject:"ALWAYS: ${currentBuild.fullDisplayName}", body: "something changed. take a look man"
+            // mail to: "lm193hk.hkust@gmail.com", subject:"ALWAYS: ${currentBuild.fullDisplayName}", body: "something changed. take a look man"
         }
     }
     stages {
+        /*
         stage('Notify') {
             steps{
                 // mail to: "lm193hk.hkust@gmail.com", subject:"BEGIN: ${currentBuild.fullDisplayName}", body: "test just began"
             }
         }
+        */
         stage('Git Test') {
             steps{
                 sh './jenkins/scripts/git.sh'
