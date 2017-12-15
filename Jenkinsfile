@@ -2,7 +2,7 @@ def notifyStarted() {
   mail to: "lm193hk.hkust@gmail.com", subject:"notifyStarted(): ${currentBuild.fullDisplayName}", body: "see it works!"
 }
 
-notifyStarted()
+// notifyStarted()
 
 pipeline {
     agent {
