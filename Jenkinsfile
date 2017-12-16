@@ -41,6 +41,7 @@ pipeline {
         stage('Git Test') {
             steps{
                 sh 'pwd'
+                sh 'ls -al'
                 sh 'whoami'
                 sh 'which node'
                 sh 'node --version'
