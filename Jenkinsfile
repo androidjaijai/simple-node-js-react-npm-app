@@ -43,6 +43,8 @@ pipeline {
         */
         stage('Git Test') {
             steps{
+                sh 'pwd'
+                sh 'whoami'
                 sh 'which git'
                 sh 'git --version'
                 sh 'which node'
