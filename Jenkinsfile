@@ -16,20 +16,20 @@ pipeline {
     environment {
         CI = 'true'
     }
-    post {
-        // changed {
-        //   mail to: "lm193hk.hkust@gmail.com", subject:"CHANGED: ${currentBuild.fullDisplayName}", body: "something changed. take a look man"
-        // }
-        // success {
-        //   mail to: "lm193hk.hkust@gmail.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay, we passed."
-        // }
-        // failure {
-        //   mail to: "lm193hk.hkust@gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Boo, we failed."
-        // }
-        always {
-            // mail to: "lm193hk.hkust@gmail.com", subject:"ALWAYS: ${currentBuild.fullDisplayName}", body: "something changed. take a look man"
-        }
-    }
+    // post {
+    //     changed {
+    //       mail to: "lm193hk.hkust@gmail.com", subject:"CHANGED: ${currentBuild.fullDisplayName}", body: "something changed. take a look man"
+    //     }
+    //     success {
+    //       mail to: "lm193hk.hkust@gmail.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay, we passed."
+    //     }
+    //     failure {
+    //       mail to: "lm193hk.hkust@gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Boo, we failed."
+    //     }
+    //     always {
+    //         mail to: "lm193hk.hkust@gmail.com", subject:"ALWAYS: ${currentBuild.fullDisplayName}", body: "something changed. take a look man"
+    //     }
+    // }
     stages {
         /*
         stage('Notify') {
