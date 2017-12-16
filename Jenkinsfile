@@ -8,12 +8,6 @@ pipeline {
   }
   stages {
     stage('Git Test') {
-      agent {
-        node {
-          label 'node_env'
-        }
-        
-      }
       steps {
         sh 'pwd'
         sh 'whoami'
