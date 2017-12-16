@@ -47,6 +47,7 @@ pipeline {
                 sh 'ls -al /usr/bin/'
                 sh 'ls -al /usr/local/bin/'
                 sh 'which apk'
+                sh 'apk add --no-cache bash git'
                 sh 'which git'
                 sh 'git --version'
                 sh './jenkins/scripts/git.sh'
