@@ -40,8 +40,6 @@ pipeline {
             steps{
                 sh 'which node'
                 sh 'node --version'
-                sh 'which apt'
-                sh 'apt --version'
                 sh 'which git'
                 sh 'git --version'
                 sh './jenkins/scripts/git.sh'
