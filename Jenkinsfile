@@ -43,10 +43,10 @@ pipeline {
         */
         stage('Git Test') {
             steps{
-                sh 'which node'
-                sh 'node --version'
                 sh 'which git'
                 sh 'git --version'
+                sh 'which node'
+                sh 'node --version'
                 sh './jenkins/scripts/git.sh'
             }
         }
