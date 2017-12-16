@@ -50,11 +50,12 @@ pipeline {
                 sh 'which apk'
                 sh 'apk add --no-cache bash git'
                 sh 'which git'
+                sh 'cat .git/config'
                 sh 'git --version'
                 sh 'git status'
                 sh 'git log'
                 sh 'git branch --list'
-                sh 'git log master'
+                sh 'git log origin/master'
                 sh 'git diff --stat origin/develop origin/master -- app/config.js'
                 sh './jenkins/scripts/git.sh'
             }
