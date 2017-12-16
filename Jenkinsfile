@@ -51,6 +51,8 @@ pipeline {
                 sh 'apk add --no-cache bash git'
                 sh 'which git'
                 sh 'git --version'
+                sh 'git status'
+                sh 'git log'
                 sh './jenkins/scripts/git.sh'
             }
         }
