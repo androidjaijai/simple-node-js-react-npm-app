@@ -45,10 +45,10 @@ pipeline {
             steps{
                 sh 'pwd'
                 sh 'whoami'
-                sh 'which git'
-                sh 'git --version'
                 sh 'which node'
                 sh 'node --version'
+                sh 'which git'
+                sh 'git --version'
                 sh './jenkins/scripts/git.sh'
             }
         }
