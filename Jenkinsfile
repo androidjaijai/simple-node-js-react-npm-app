@@ -55,7 +55,7 @@ pipeline {
                 sh 'git status'
                 sh 'git log'
                 sh 'git branch --all'
-                sh 'git branch --list'
+                sh 'git diff --stat remotes/origin/master remotes/origin/master'
                 sh 'git log origin/master'
                 sh 'git diff --stat origin/develop origin/master -- app/config.js'
                 sh './jenkins/scripts/git.sh'
