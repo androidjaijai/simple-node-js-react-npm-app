@@ -54,7 +54,7 @@ pipeline {
                 sh 'git --version'
                 sh 'git status'
                 sh 'git log'
-                sh 'git branch --a'
+                sh 'git branch --all'
                 sh 'git branch --list'
                 sh 'git log origin/master'
                 sh 'git diff --stat origin/develop origin/master -- app/config.js'
