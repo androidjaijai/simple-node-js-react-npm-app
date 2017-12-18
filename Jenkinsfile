@@ -50,6 +50,7 @@ pipeline {
                 sh 'which apk'
                 sh 'apk add --no-cache bash git'
                 sh 'which git'
+                sh 'git branch master'
                 sh 'git branch -u origin/master master'
                 sh 'cat .git/config'
                 sh 'git --version'
