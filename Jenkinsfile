@@ -54,7 +54,7 @@ pipeline {
                 sh 'git --version'
                 sh 'git status'
                 sh 'git log'
-                sh 'git pull master'
+                sh 'git pull origin/master'
                 sh 'git branch -r | grep -v "\\->" | while read remote; do git branch --track "${remote#origin/}" "$remote"; done'
                 sh 'git branch --all'
                 sh 'git fetch --all'
