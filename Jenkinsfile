@@ -40,6 +40,7 @@ pipeline {
         */
         stage('Git Test') {
             steps{
+                sh 'printenv'
                 // sh 'pwd'
                 // sh 'ls -al'
                 // sh 'whoami'
