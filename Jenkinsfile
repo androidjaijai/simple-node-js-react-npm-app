@@ -48,7 +48,6 @@ pipeline {
                 sh 'printenv'
                 sh 'echo $GIT_COMMIT'
                 sh 'echo $GIT_PREVIOUS_COMMIT'
-                sh 'bash jenkins/scripts/git.sh'
                 script {
                     IS_APP_CONFIG_CHANGED = sh(
                         script: 'bash jenkins/scripts/git.sh',
