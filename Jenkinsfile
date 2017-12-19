@@ -51,7 +51,7 @@ pipeline {
                 sh 'bash jenkins/scripts/git.sh'
                 script {
                     IS_APP_CONFIG_CHANGED = sh(
-                        script: sh 'bash jenkins/scripts/git.sh',
+                        script: 'bash jenkins/scripts/git.sh',
                         returnStdout: true
                     )
                     echo "${IS_APP_CONFIG_CHANGED}"
