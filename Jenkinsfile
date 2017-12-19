@@ -63,7 +63,6 @@ pipeline {
                 sh 'git diff --stat remotes/origin/master remotes/origin/master'
                 sh 'git log origin/master'
                 sh 'git diff --stat origin/develop origin/master -- app/config.js'
-                sh './jenkins/scripts/git.sh'
             }
         }
         stage('Fail') {
