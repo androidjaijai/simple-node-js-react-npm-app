@@ -53,7 +53,7 @@ pipeline {
                     IS_APP_CONFIG_CHANGED = sh(
                         script: 'bash jenkins/scripts/git.sh',
                         returnStdout: true
-                    )
+                    ).trim()
                     echo "${IS_APP_CONFIG_CHANGED}"
                     if (IS_APP_CONFIG_CHANGED.equals("same")) {
                         echo "SAMEEEEEEEEEEEEE"
