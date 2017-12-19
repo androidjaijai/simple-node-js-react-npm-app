@@ -58,49 +58,9 @@ pipeline {
                         echo "SAME"
                     } else {
                         echo "CHANGED"
-                        mail to: "lm193hk.hkust@gmail.com", subject:"Detected App Config Changed: ${currentBuild.fullDisplayName}", body: "Between <br> ${GIT_COMMIT} <br> and <br> ${GIT_PREVIOUS_COMMIT}"
+                        mail to: "lm193hk.hkust@gmail.com", subject:"Detected App Config Changed: ${currentBuild.fullDisplayName}", body: "Between   ${GIT_COMMIT}   and   ${GIT_PREVIOUS_COMMIT}"
                     }
                 }
-                // sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT'
-                // sh 'echo $?'
-                // sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT; echo $?;'
-                // sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT -- app/config.js'
-                // sh 'echo $?'
-                // sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT -- app/no_this_file'
-                // sh 'echo $?'
-                // sh 'pwd'
-                // sh 'ls -al'
-                // sh 'whoami'
-                // sh 'which node'
-                // sh 'node --version'
-                // sh 'ls -al /usr/bin/'
-                // sh 'ls -al /usr/local/bin/'
-                // sh 'which apk'
-                // sh 'apk add --no-cache bash git'
-                // sh 'which git'
-                // sh 'git ls-remote'
-                // sh 'git branch -D master'
-                // sh 'git checkout --orphan master'
-                // sh 'git pull --all'
-                // sh 'git checkout master'
-                // sh 'git pull'
-                // sh 'git status'
-                // sh 'git log'
-                // sh 'git checkout develop'
-                // sh 'git status'
-                // sh 'git log'
-                // // sh 'git branch master'
-                // // sh 'git branch -u remote/origin/master master'
-                // sh 'cat .git/config'
-                // sh 'git --version'
-                // // sh 'git pull origin/master'
-                // // sh 'git branch -r | grep -v "\\->" | while read remote; do git branch --track "${remote#origin/}" "$remote"; done'
-                // sh 'git branch --all'
-                // // sh 'git fetch --all'
-                // // sh 'git diff --stat remotes/origin/master remotes/origin/master'
-                // // sh 'git log origin/master'
-                // sh 'git diff --stat develop master -- app/config.js'
-                // sh 'git diff --stat origin/develop origin/master -- app/config.js'
             }
         }
         stage('Fail') {
