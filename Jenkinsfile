@@ -51,7 +51,7 @@ pipeline {
                 sh 'apk add --no-cache bash git'
                 sh 'which git'
                 // sh 'git branch master'
-                sh 'git branch -u origin/master master'
+                sh 'git branch -u remote/origin/master master'
                 sh 'cat .git/config'
                 sh 'git --version'
                 sh 'git status'
