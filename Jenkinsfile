@@ -50,10 +50,12 @@ pipeline {
                 sh 'echo $GIT_PREVIOUS_COMMIT'
                 sh 'bash jenkins/scripts/git.sh'
                 script {
-                    sh 'bash jenkins/scripts/git.sh' > is_app_config_changed
-                    def detect = readFile is_app_config_changed
-                    echo "${detect}"
-                    if (detect.equals("same")) {
+                    IS_APP_CONFIG_CHANGED = sh(
+                        script: sh 'bash jenkins/scripts/git.sh',
+                        returnStdout: true
+                    )
+                    echo "${IS_APP_CONFIG_CHANGED}"
+                    if (IS_APP_CONFIG_CHANGED.equals("same")) {
                         echo "SAMEEEEEEEEEEEEE"
                     } else {
                         echo "CHANGEDDDDDDDDDDD"
