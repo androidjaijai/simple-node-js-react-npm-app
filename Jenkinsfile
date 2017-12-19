@@ -38,24 +38,24 @@ pipeline {
             }
         }
         */
-        stage('Install Needed Software') {
+        stage('Install Software') {
             steps {
                 sh 'apk add --no-cache bash git'
             }
         }
         stage('Git Test') {
             steps{
-                sh 'which bash'
                 sh 'printenv'
                 sh 'echo $GIT_COMMIT'
                 sh 'echo $GIT_PREVIOUS_COMMIT'
-                sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT'
-                sh 'echo $?'
-                sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT; echo $?;'
-                sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT -- app/config.js'
-                sh 'echo $?'
-                sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT -- app/no_this_file'
-                sh 'echo $?'
+                bash 'jenkins/scripts/git.sh'
+                // sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT'
+                // sh 'echo $?'
+                // sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT; echo $?;'
+                // sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT -- app/config.js'
+                // sh 'echo $?'
+                // sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT -- app/no_this_file'
+                // sh 'echo $?'
                 // sh 'pwd'
                 // sh 'ls -al'
                 // sh 'whoami'
