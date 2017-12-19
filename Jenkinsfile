@@ -51,6 +51,8 @@ pipeline {
                 sh 'apk add --no-cache bash git'
                 // sh 'which git'
                 sh 'git ls-remote'
+                sh 'git branch -D master'
+                sh 'git checkout --orphan master'
                 sh 'git pull --all'
                 sh 'git checkout master'
                 sh 'git pull'
