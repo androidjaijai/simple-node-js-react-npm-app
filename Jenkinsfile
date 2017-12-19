@@ -49,6 +49,13 @@ pipeline {
                 sh 'echo $GIT_COMMIT'
                 sh 'echo $GIT_PREVIOUS_COMMIT'
                 sh 'bash jenkins/scripts/git.sh'
+                def detect = sh 'bash jenkins/scripts/git.sh'
+                echo "${detect}"
+                if (detect.equals("same")) {
+                    echo "SAMEEEEEEEEEEEEE"
+                } else {
+                    echo "CHANGEDDDDDDDDDDD"
+                }
                 // sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT'
                 // sh 'echo $?'
                 // sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT; echo $?;'
