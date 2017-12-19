@@ -1,9 +1,3 @@
-def notifyStarted() {
-  mail to: "lm193hk.hkust@gmail.com", subject:"notifyStarted(): ${currentBuild.fullDisplayName}", body: "see it works!"
-}
-
-// notifyStarted()
-
 pipeline {
 
     agent {
@@ -19,14 +13,14 @@ pipeline {
 
     post {
         always {
-            mail to: "lm193hk.hkust@gmail.com", subject:"FINISHED: ${currentBuild.fullDisplayName}", body: "Test just finished."
+            mail to: "lm193hk.hkust@gmail.com", subject:"FINISHED: ${currentBuild.fullDisplayName}", body: "Test between   ${GIT_COMMIT}   and   ${GIT_PREVIOUS_COMMIT}   just finished."
         }
     }
 
     stages {
         stage('Notify') {
             steps{
-                mail to: "lm193hk.hkust@gmail.com", subject:"BEGIN: ${currentBuild.fullDisplayName}", body: "Test just began."
+                mail to: "lm193hk.hkust@gmail.com", subject:"BEGIN: ${currentBuild.fullDisplayName}", body: "Test between   ${GIT_COMMIT}   and   ${GIT_PREVIOUS_COMMIT}   just began."
             }
         }
         stage('Install Software') {
