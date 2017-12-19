@@ -48,7 +48,7 @@ pipeline {
                 sh 'printenv'
                 sh 'echo $GIT_COMMIT'
                 sh 'echo $GIT_PREVIOUS_COMMIT'
-                bash 'jenkins/scripts/git.sh'
+                sh 'bash jenkins/scripts/git.sh'
                 // sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT'
                 // sh 'echo $?'
                 // sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT; echo $?;'
