@@ -41,6 +41,8 @@ pipeline {
         stage('Git Test') {
             steps{
                 sh 'printenv'
+                sh 'echo GIT_COMMIT'
+                sh 'echo GIT_PREVIOUS_COMMIT'
                 // sh 'pwd'
                 // sh 'ls -al'
                 // sh 'whoami'
