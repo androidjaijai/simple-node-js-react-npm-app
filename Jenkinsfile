@@ -28,7 +28,7 @@ pipeline {
                 sh 'apk add --no-cache bash git'
             }
         }
-        stage('Git Test') {
+        stage('App Config Check') {
             steps{
                 sh 'printenv'
                 sh 'echo $GIT_COMMIT'
