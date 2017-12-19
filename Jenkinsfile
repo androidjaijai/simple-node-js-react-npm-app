@@ -41,6 +41,7 @@ pipeline {
         stage('Git Test') {
             steps{
                 sh 'apk add --no-cache bash git'
+                sh 'which bash'
                 sh 'printenv'
                 sh 'echo $GIT_COMMIT'
                 sh 'echo $GIT_PREVIOUS_COMMIT'
