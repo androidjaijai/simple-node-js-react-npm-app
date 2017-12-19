@@ -40,6 +40,7 @@ pipeline {
         */
         stage('Git Test') {
             steps{
+                sh 'apk add --no-cache bash git'
                 sh 'printenv'
                 sh 'echo $GIT_COMMIT'
                 sh 'echo $GIT_PREVIOUS_COMMIT'
@@ -54,7 +55,7 @@ pipeline {
                 // sh 'ls -al /usr/bin/'
                 // sh 'ls -al /usr/local/bin/'
                 // sh 'which apk'
-                // sh 'apk add --no-cache bash git'
+                sh 'apk add --no-cache bash git'
                 // sh 'which git'
                 // sh 'git ls-remote'
                 // sh 'git branch -D master'
