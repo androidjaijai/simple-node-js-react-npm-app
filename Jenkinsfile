@@ -58,7 +58,7 @@ pipeline {
                         echo "SAMEEEEEEEEEEEEE"
                     } else {
                         echo "CHANGEDDDDDDDDDDD"
-                        mail to: "lm193hk.hkust@gmail.com", subject:"Detected App Config Changed: ${currentBuild.fullDisplayName}", body: "Between ${GIT_COMMIT} and ${GIT_PREVIOUS_COMMIT}"
+                        mail to: "lm193hk.hkust@gmail.com", subject:"Detected App Config Changed: ${currentBuild.fullDisplayName}", body: "Between \\n ${GIT_COMMIT} \\n and \\n ${GIT_PREVIOUS_COMMIT}"
                     }
                 }
                 // sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT'
