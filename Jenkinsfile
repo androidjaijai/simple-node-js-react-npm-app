@@ -43,7 +43,7 @@ pipeline {
                         echo "SAME"
                     } else {
                         echo "CHANGED"
-                        mail to: "lm193hk.hkust@gmail.com", subject:"Detected App Config Changed: ${currentBuild.fullDisplayName}", body: "Between   ${GIT_COMMIT}   and   ${GIT_PREVIOUS_COMMIT}"
+                        mail to: "lm193hk.hkust@gmail.com", subject:"Change to App Config Detected: ${currentBuild.fullDisplayName}", body: "Between   ${GIT_COMMIT}   and   ${GIT_PREVIOUS_COMMIT}"
                     }
                 }
             }
