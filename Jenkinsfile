@@ -55,10 +55,10 @@ pipeline {
                     ).trim()
                     echo "${IS_APP_CONFIG_CHANGED}"
                     if (IS_APP_CONFIG_CHANGED.equals("same")) {
-                        echo "SAMEEEEEEEEEEEEE"
+                        echo "SAME"
                     } else {
-                        echo "CHANGEDDDDDDDDDDD"
-                        mail to: "lm193hk.hkust@gmail.com", subject:"Detected App Config Changed: ${currentBuild.fullDisplayName}", body: "Between \\n ${GIT_COMMIT} \\n and \\n ${GIT_PREVIOUS_COMMIT}"
+                        echo "CHANGED"
+                        mail to: "lm193hk.hkust@gmail.com", subject:"Detected App Config Changed: ${currentBuild.fullDisplayName}", body: "Between <br> ${GIT_COMMIT} <br> and <br> ${GIT_PREVIOUS_COMMIT}"
                     }
                 }
                 // sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT'
