@@ -47,6 +47,7 @@ pipeline {
                 sh 'echo $GIT_PREVIOUS_COMMIT'
                 sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT'
                 sh 'echo $?'
+                sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT; echo $?;'
                 sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT -- app/config.js'
                 sh 'echo $?'
                 sh 'git diff --stat $GIT_COMMIT $GIT_PREVIOUS_COMMIT -- app/no_this_file'
